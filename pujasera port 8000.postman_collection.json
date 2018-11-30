@@ -1,0 +1,968 @@
+{
+	"info": {
+		"_postman_id": "50360197-e916-4957-bf3f-f8f4702c6fe3",
+		"name": "pujasera port 8000",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nama",
+							"value": "customer tiga",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "customer_tiga",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "alamat",
+							"value": "jalan customer tiga",
+							"type": "text"
+						},
+						{
+							"key": "nohp",
+							"value": "097865679",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": ""
+						},
+						{
+							"key": "email",
+							"value": "customer_tiga@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "customer_tiga",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "login"
+			},
+			"response": []
+		},
+		{
+			"name": "customer.dashboard",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$v/Sc.eI3vDLqYZRI81d77uhOgXM6klxtDaJjezR3kC.tU6f1Tm01a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/api/customer/dashboard/3/mie",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"dashboard",
+						"3",
+						"mie"
+					]
+				},
+				"description": "dashboard customer"
+			},
+			"response": []
+		},
+		{
+			"name": "customer.pesan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$v/Sc.eI3vDLqYZRI81d77uhOgXM6klxtDaJjezR3kC.tU6f1Tm01a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "jumlah",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "id_hidangan",
+							"value": "9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/customer/pesan",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"pesan"
+					]
+				},
+				"description": "pesan"
+			},
+			"response": []
+		},
+		{
+			"name": "customer.cart",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$v/Sc.eI3vDLqYZRI81d77uhOgXM6klxtDaJjezR3kC.tU6f1Tm01a",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/customer/cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"cart"
+					]
+				},
+				"description": "pembeli"
+			},
+			"response": []
+		},
+		{
+			"name": "customer.beli",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$v/Sc.eI3vDLqYZRI81d77uhOgXM6klxtDaJjezR3kC.tU6f1Tm01a",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/customer/beli/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"beli",
+						"2"
+					]
+				},
+				"description": "pembelian "
+			},
+			"response": []
+		},
+		{
+			"name": "customer.beli.alt",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$v/Sc.eI3vDLqYZRI81d77uhOgXM6klxtDaJjezR3kC.tU6f1Tm01a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"meja\" : 2,\n\t\"pesanan\" : [\n\t\t9\n\t\t]\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/api/customer/beli-alt",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"beli-alt"
+					]
+				},
+				"description": "pembelian dengan memilih pesanan didalam cart"
+			},
+			"response": []
+		},
+		{
+			"name": "customer.cart.delete",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$v/Sc.eI3vDLqYZRI81d77uhOgXM6klxtDaJjezR3kC.tU6f1Tm01a",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/customer/cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"cart"
+					]
+				},
+				"description": "delete cart"
+			},
+			"response": []
+		},
+		{
+			"name": "customer.cart.amount",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$v/Sc.eI3vDLqYZRI81d77uhOgXM6klxtDaJjezR3kC.tU6f1Tm01a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "jumlah",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_pemesanan",
+							"value": "9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/customer/cart/amount/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"cart",
+						"amount",
+						"7"
+					]
+				},
+				"description": "merubah jumlah pesanan"
+			},
+			"response": []
+		},
+		{
+			"name": "customer.transaksi.index",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$v/Sc.eI3vDLqYZRI81d77uhOgXM6klxtDaJjezR3kC.tU6f1Tm01a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "jumlah",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_pemesanan",
+							"value": "9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/customer/transaksi/index",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"transaksi",
+						"index"
+					]
+				},
+				"description": "transaksi dengan filter bulan dan tahun"
+			},
+			"response": []
+		},
+		{
+			"name": "customer.transaksi.current",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$v/Sc.eI3vDLqYZRI81d77uhOgXM6klxtDaJjezR3kC.tU6f1Tm01a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "jumlah",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_pemesanan",
+							"value": "9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/customer/transaksi/current",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"transaksi",
+						"current"
+					]
+				},
+				"description": "transaksi hari ini"
+			},
+			"response": []
+		},
+		{
+			"name": "customer.dompet",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$v/Sc.eI3vDLqYZRI81d77uhOgXM6klxtDaJjezR3kC.tU6f1Tm01a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "jumlah",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_pemesanan",
+							"value": "9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/customer/transaksi/current",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"transaksi",
+						"current"
+					]
+				},
+				"description": "history dompet dan saldo"
+			},
+			"response": []
+		},
+		{
+			"name": "stan.pesanan.index",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$bDYgcpVXUMlza7WOfFWH8OfqL.hbfmG9rL7AOsY20Mdm0IvXFe4IS",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/stan/pesanan/index/11/2018",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"stan",
+						"pesanan",
+						"index",
+						"11",
+						"2018"
+					]
+				},
+				"description": "semua pesanan per bulan dan tahun"
+			},
+			"response": []
+		},
+		{
+			"name": "stan.pesanan.current",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$bDYgcpVXUMlza7WOfFWH8OfqL.hbfmG9rL7AOsY20Mdm0IvXFe4IS",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/stan/pesanan/index/11/2018",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"stan",
+						"pesanan",
+						"index",
+						"11",
+						"2018"
+					]
+				},
+				"description": "pesanan hari ini"
+			},
+			"response": []
+		},
+		{
+			"name": "stan.pesanan.konfirmasi",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$bDYgcpVXUMlza7WOfFWH8OfqL.hbfmG9rL7AOsY20Mdm0IvXFe4IS",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/stan/pesanan/konfirmasi/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"stan",
+						"pesanan",
+						"konfirmasi",
+						"5"
+					]
+				},
+				"description": "konfirmasi pesanan"
+			},
+			"response": []
+		},
+		{
+			"name": "stan.history.index",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$bDYgcpVXUMlza7WOfFWH8OfqL.hbfmG9rL7AOsY20Mdm0IvXFe4IS",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/stan/history",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"stan",
+						"history"
+					]
+				},
+				"description": "histori pesanan, refund, deposit\nperbulan dan tahun"
+			},
+			"response": []
+		},
+		{
+			"name": "stan.deposit.index",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$bDYgcpVXUMlza7WOfFWH8OfqL.hbfmG9rL7AOsY20Mdm0IvXFe4IS",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/stan/history",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"stan",
+						"history"
+					]
+				},
+				"description": "form untuk deposit"
+			},
+			"response": []
+		},
+		{
+			"name": "stan.deposit.store",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$bDYgcpVXUMlza7WOfFWH8OfqL.hbfmG9rL7AOsY20Mdm0IvXFe4IS",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "customer",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "nohp",
+							"value": "0980899090",
+							"type": "text"
+						},
+						{
+							"key": "nominal",
+							"value": "3000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/stan/deposit/store",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"stan",
+						"deposit",
+						"store"
+					]
+				},
+				"description": "store deposit"
+			},
+			"response": []
+		},
+		{
+			"name": "stan.menu.index",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$bDYgcpVXUMlza7WOfFWH8OfqL.hbfmG9rL7AOsY20Mdm0IvXFe4IS",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/stan/menu/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"stan",
+						"menu",
+						"2"
+					]
+				},
+				"description": "menampilkan daftar menu"
+			},
+			"response": []
+		},
+		{
+			"name": "stan.menu.stock",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer $2y$10$bDYgcpVXUMlza7WOfFWH8OfqL.hbfmG9rL7AOsY20Mdm0IvXFe4IS",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/stan/stock/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"stan",
+						"stock",
+						"7"
+					]
+				},
+				"description": "ubah stock"
+			},
+			"response": []
+		}
+	]
+}
