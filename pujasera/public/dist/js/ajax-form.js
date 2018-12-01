@@ -25,7 +25,7 @@
             _btn_submit = $(this).find("input[type=submit], button[type=submit]"),
           _btn_submit_default_html = _btn_submit.html()
         ;
-          console.log(data);
+          //console.log(data);
         $.ajax({
           url: $(that).attr('action'),
           type: $(that).attr('method'),
@@ -52,7 +52,7 @@
           }
         })
         .done(function(e) {
-            console.log(e);
+          //  console.log(e);
           if(typeof e !== "undefined") {
 
               show_notif(e.status, e.message, e.title);
@@ -67,7 +67,7 @@
           }
         })
         .fail(function(e) {
-            console.log(e);
+           // console.log(e);
           var json = e.responseJSON;
           if(json != null)
           {
@@ -80,7 +80,7 @@
 
             $(that).find('button').removeAttr('disabled');
             $.each(errors, function(index, data) {
-                console.log(data[0]);
+              //  console.log(data[0]);
                 var _feedback = '<span class="help-block form-invalid">' +
                     '<strong><i class="fa fa-exclamation-triangle"></i> '+ data[0] +'</strong></span>';
 
